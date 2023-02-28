@@ -1,0 +1,106 @@
+#tourOverlay {
+    position: absolute;
+    z-index: 100;
+}
+.tour-card {
+    width: 300px;
+    height: auto;
+    font-family: Roboto;
+    color: white;
+    border-radius: 6px;
+    background: #f44336;
+    padding: 16px 25px 8px 25px;
+    position: relative;
+    border: 2px solid #f44336;
+    pointer-events: all;
+
+    .title {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .content {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 150%;
+        color: white;
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2px;
+        padding-bottom: 0;
+
+        .step-selectors {
+            min-width: 50px;
+            display: flex;
+
+            .step-selector {
+                width: 0.6vw;
+                height: 0.6vw;
+                margin-right: 6px;
+                margin-top: 17px;
+                border-radius: 50%;
+                background: #e6776f;
+                cursor: pointer;
+            }
+
+            .current-step {
+                background: white;
+            }
+        }
+
+        .buttons {
+            display: flex;
+
+            .btn {
+                width: 54px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                cursor: pointer;
+                padding: 0 !important;
+                background: #e6776f;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    opacity: 0.5;
+    z-index: 3;
+}
+
+.left-bar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 21%;
+    height: 100%;
+    z-index: 5;
+}
+
+
+.vertical-helper {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  .settings-overlay .tour-overlay {
+    top: unset !important;
+    left: 8vw !important;
+  }

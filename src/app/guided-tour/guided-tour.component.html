@@ -1,0 +1,31 @@
+
+<div 
+    id="tourOverlay" 
+    class="location-right" 
+    [style.display]="showBackdrop ? 'block' : 'none'"
+>
+    <div class="overlay-content">
+        <div class="arrow">
+        </div>
+        <div class="tour-card" (click)="$event.stopPropagation()">
+            <div class="title">{{currentStep.title}}</div>
+            <div class="content">{{currentStep.content}}</div>
+            <div class="footer">
+                <div class="step-selectors">
+                    <div class="vertical-helper"></div>
+                    <div class="step-selector" *ngFor="let step of steps"
+                        (click)="goToStep(step.stepCount)"
+                        [class.current-step]="step.stepCount===currentStep.stepCount">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="btn skip" (click)="endTour()">{{constants.ButtonLabels.Skip}}</div>
+                    <div class="btn next" (click)="goToNext()">
+                        {{ currentStep.stepCount===(totalStepCount-1) ? constants.ButtonLabels.End : constants.ButtonLabels.Next }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backdrop" *ngIf="showBackdrop"></div>

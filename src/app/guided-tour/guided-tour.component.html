@@ -1,12 +1,9 @@
 
 <div 
     id="tourOverlay" 
-    class="location-right" 
     [style.display]="showBackdrop ? 'block' : 'none'"
 >
     <div class="overlay-content">
-        <div class="arrow">
-        </div>
         <div class="tour-card" (click)="$event.stopPropagation()">
             <div class="title">{{currentStep.title}}</div>
             <div class="content">{{currentStep.content}}</div>

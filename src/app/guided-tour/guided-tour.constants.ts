@@ -2,35 +2,31 @@ export const Constants = {
     Steps: [
         {
             selector: 'stats-card-1-guided-tour-selector',
-            location: 'RIGHT',
-            right: '-23vw',
-            top: 'unset',
             classToAdd: 'guided-tour-selector',
             title: 'Real Time Statistics',
-            content: 'These cards will tell you about the real time statistics that you have for the dashboard.'
+            content: 'These cards will tell you about the real time statistics that you have for the dashboard.',
+            right: '-23vw',
+            top: 'unset',
         },
         {
-            selector: 'notifications-guided-tour-selector',
-            location: 'BOTTOM',
+            selector: 'search-guided-tour-selector',
+            classToAdd: 'guided-tour-selector',
+            title: 'Search feature',
+            content: 'You can click on this icon to search for a specific feature that you are looking for.',
             right: 'unset',
             top: '7vh',
-            classToAdd: 'guided-tour-selector',
-            title: 'Notifications',
-            content: 'You can click on this icon to stay updated about the notifications you might have received.'
         },
         {
             selector: 'stats-card-2-guided-tour-selector',
-            location: 'RIGHT',
-            right: '-23vw',
-            top: 'unset',
             classToAdd: 'guided-tour-selector',
             title: 'Real Time Data',
-            content: 'These cards will provide you the real time graph for your data.'
+            content: 'These cards will provide you the real time graph for your data.',
+            right: '-23vw',
+            top: 'unset',
         },
     ],
     NullStep: {
         stepCount: -1,
-        location: 'BOTTOM',
         selector: null,
         classToAdd: null,
         title: '',

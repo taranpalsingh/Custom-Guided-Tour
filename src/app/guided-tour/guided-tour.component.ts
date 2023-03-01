@@ -10,10 +10,10 @@ import {Constants} from './guided-tour.constants';
 })
 export class GuidedTourComponent implements OnInit, OnDestroy {
 
-  constants = Constants;
-  showBackdrop = false;
-  steps = [];
-  currentStep = this.constants.NullStep;
+  constants = Constants; // Our constants file
+  showBackdrop = false; // variable to show and hide backdrop
+  steps = []; // steps array that will contain our steps of guided tour
+  currentStep = this.constants.NullStep; 
   
   totalStepCount: number;
 
@@ -27,6 +27,7 @@ export class GuidedTourComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initializeSteps();
 
+    // Subscribing to currentStep from our service to know which is the current step right now
     this.$currentStep = this.tourService.currentStep
     .subscribe(response => {
 
@@ -38,6 +39,7 @@ export class GuidedTourComponent implements OnInit, OnDestroy {
     })
   }
 
+  // initialize steps from constants file to the variable 'steps' 
   initializeSteps() {
     let count = 0;
 
@@ -55,9 +57,15 @@ export class GuidedTourComponent implements OnInit, OnDestroy {
   guidedTourStep() {
     const step = this.currentStep;
     const overlay = document.getElementById(this.constants.OverlayId);
+
+    // setting right and top styles to our tour component
     overlay.setAttribute("style", `right: ${this.currentStep.right}; top: ${this.currentStep.top};`);
+    
+    // appending our tour component to the tagrget element
     let target = document.getElementById(step.selector);
     target.append(overlay);
+
+    // highlight the target element
     this.guidedTourHighlightElement(true); 
   }
 
@@ -65,13 +73,8 @@ export class GuidedTourComponent implements OnInit, OnDestroy {
     const element = document.getElementById(this.currentStep.selector);
     const overlay = document.getElementById(this.constants.OverlayId);
 
-    highlight ? element.classList.add('active') : element.classList.remove('active');
-    
-    if(this.currentStep.title != 'Settings') {
-      highlight ? element.classList.add('highlight-element') : element.classList.remove('highlight-element');
-    } else {
-      highlight ? overlay.classList.add('settings-overlay') : overlay.classList.remove('settings-overlay');
-    }
+    // highlight ? element.classList.add('active') : element.classList.remove('active');
+    highlight ? element.classList.add('highlight-element') : element.classList.remove('highlight-element');
   }
 
   endTour() {

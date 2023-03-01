@@ -19,10 +19,8 @@ export class AdminLayoutComponent implements OnInit {
 	constructor( public location: Location, private router: Router, private guidedTour: GuidedTourService) {}
 
 	ngOnInit() {
-		setTimeout(() => {
-			console.log('starting tour');
-			this.guidedTour.setStartTour(1);
-		}, 300);
+		// starting our tour
+		this.guidedTour.setStartTour(1);
 	
 		const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 

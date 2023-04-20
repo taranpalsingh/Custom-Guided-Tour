@@ -1,8 +1,10 @@
 name: CICD
 
-on: [push, pull_request]:
-    branches:
-      - cicd
+on: 
+    pull_request:
+    push:
+        branches:
+          - cicd
 
 jobs:
   build:

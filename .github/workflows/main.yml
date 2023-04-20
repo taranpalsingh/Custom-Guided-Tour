@@ -3,7 +3,7 @@ on: [issues]
 jobs:
   autoclose:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
     - name: Issue auto-closer
       uses: roots/issue-closer-action@v1.1
       with:

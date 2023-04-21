@@ -3,7 +3,6 @@ description: 'Deploy YAML'
 
 on: 
   pull_request:
-  push:
 
 runs: 
   using: 'node16'

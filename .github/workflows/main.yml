@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: taranpalsingh/Custom-Guided-Tour@v1.1
+        uses: taranpalsingh/Custom-Guided-Tour
         with:
           who-to-greet: 'Taran'
       # Use the output from the `hello` step

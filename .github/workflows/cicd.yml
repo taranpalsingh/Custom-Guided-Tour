@@ -2,8 +2,22 @@ name: CICD
 description: 'Deploy YAML'
 
 on: 
-  pull_request:
+  [pull_request]
+ 
+jobs:
+  build:
 
-runs: 
-  using: 'node16'
-  main: 'index.js'
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.15]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Using Node version ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build --c=production --if-present

@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ./.github/workflows/action
+        uses: ./workflows/action
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
